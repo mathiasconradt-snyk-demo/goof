@@ -32,6 +32,9 @@ jobs:
           name: Run tests
           command: npm test
       - run: npm install -q
+      - run: # run snyk auth - authenticate snyk use environment variables to add token
+         name: snyk auth
+         command: snyk auth $SNYK_API_TOKEN
       - snyk/scan:
           fail-on-issues: true                    
           severity-threshold: high
