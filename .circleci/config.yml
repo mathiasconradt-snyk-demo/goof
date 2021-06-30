@@ -17,8 +17,8 @@ jobs:
           name: snyk auth
           command: snyk auth $SNYK_API_TOKEN
       - run: # run snyk test
-          name: snyk test to HTML
-          command: 'snyk test --severity-threshold=high'            
+          name: snyk test
+          command: 'snyk test --severity-threshold=high' # https://raw.githubusercontent.com/snyk-schmidtty/goof-github/master/.circleci/config.yml           
       #- run: # run snyk monitor
           #name: snyk monitor
           # command: 'snyk monitor --all-projects --remote-repo-url=goof-github-circleci'
