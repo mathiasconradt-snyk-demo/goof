@@ -35,6 +35,9 @@ jobs:
       - run: # run snyk auth - authenticate snyk use environment variables to add token
          name: snyk auth
          command: snyk auth $SNYK_API_TOKEN
+      - run: # output to HTML
+         name: snyk test
+         command: 'snyk test'
       - snyk/scan:
           fail-on-issues: true                    
           severity-threshold: high
