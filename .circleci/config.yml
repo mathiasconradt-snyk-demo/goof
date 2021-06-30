@@ -37,11 +37,11 @@ jobs:
          command: snyk auth $SNYK_API_TOKEN
       - run: # output to HTML
          name: snyk test
-         command: 'snyk test'
-      - snyk/scan:
-          fail-on-issues: true                    
-          severity-threshold: high
-          token-variable: SNYK_API_TOKEN
+         command: snyk test
+#      - snyk/scan:
+#          fail-on-issues: true                    
+#          severity-threshold: high
+#          token-variable: SNYK_API_TOKEN
 
 workflows:
   # Below is the definition of your workflow.
