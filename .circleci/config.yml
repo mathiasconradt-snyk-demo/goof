@@ -32,7 +32,10 @@ jobs:
           name: Run tests
           command: npm test
       - run: npm install -q
-      - snyk/scan
+      - snyk/scan:
+          fail-on-issues: true                    
+          severity-threshold: high
+          token-variable: SNYK_API_TOKEN
 
 workflows:
   # Below is the definition of your workflow.
